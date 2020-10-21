@@ -1,5 +1,7 @@
 package FunctionLayer;
 
+import DBAccess.BottomMapper;
+import DBAccess.TopMapper;
 import DBAccess.UserMapper;
 
 import java.util.ArrayList;
@@ -21,19 +23,23 @@ public class LogicFacade {
         return user;
     }
     public static List<Bottom> getAllBottoms (){
-        List<Bottom> retval=new ArrayList<Bottom>();
-        retval.add(new Bottom(1,"bottom1",5));
-        retval.add(new Bottom(2,"bottom2",5));
+        List<Bottom> retval=null;
+        try {
+            retval = BottomMapper.getAllBottoms();
+        }catch (DBException e){
+            retval=new ArrayList<>();
+        }
         return retval;
-
     }
 
     public static List<Top> getAllToppings (){
-        List<Top> retval=new ArrayList<Top>();
-        retval.add(new Top(1,"top1",5));
-        retval.add(new Top(2,"top2",5));
+        List<Top> retval=null;
+        try {
+             retval = TopMapper.getAllToppings();
+        }catch (DBException e){
+            retval=new ArrayList<>();
+        }
         return retval;
-
     }
 
 }
