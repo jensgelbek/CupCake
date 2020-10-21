@@ -2,10 +2,10 @@
 
 -- noinspection SqlNoDataSourceInspectionForFile
 
-CREATE DATABASE  IF NOT EXISTS `useradmin`;
+CREATE DATABASE  IF NOT EXISTS cupcake;
 
 
-USE `useradmin`;
+USE cupcake;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
