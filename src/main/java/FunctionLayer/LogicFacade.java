@@ -2,6 +2,7 @@ package FunctionLayer;
 
 import DBAccess.UserMapper;
 
+import javax.faces.view.facelets.FaceletContext;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,8 @@ import java.util.List;
  * @author kasper
  */
 public class LogicFacade {
+
+
 
     public static User login( String email, String password ) throws LoginSampleException {
         return UserMapper.login( email, password );
@@ -25,7 +28,6 @@ public class LogicFacade {
         retval.add(new Bottom(1,"bottom1",5));
         retval.add(new Bottom(2,"bottom2",5));
         return retval;
-
     }
 
     public static List<Top> getAllToppings (){

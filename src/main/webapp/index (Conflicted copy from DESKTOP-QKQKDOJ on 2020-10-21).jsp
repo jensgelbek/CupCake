@@ -21,18 +21,6 @@
 
 <body class="container">
 
-
-<div class="row">
-    <h1 class="text-center">Velkommen ombord</h1>
-    <br>
-</div>
-
-<div class="row">
-    <h3 class="text-center">Øens bedste Cupcakes. Vælg og bestil her</h3>
-    <br>
-    <br>
-</div>
-
 <%
     request.setAttribute("bottoms", LogicFacade.getAllBottoms());
     request.setAttribute("toppings", LogicFacade.getAllToppings());
@@ -47,7 +35,7 @@
             <!-- Dropdown numbers -->
             <div class="form-group ">
                 <label for="numberOfCupcakes">Angiv antal</label>
-                <select class="form-control" name="number" id="numberOfCupcakes">
+                <select class="form-control" name="numbers" id="numberOfCupcakes">
                     <option value="1">
                         1
                     </option>
@@ -65,9 +53,9 @@
             <!-- Dropdown bottoms -->
             <div class="form-group">
                 <label for="selectBottom">Select Cupcake bottom</label>
-                <select class="form-control" name="bottom" id="selectBottom">
+                <select class="form-control" name="Bottoms" id="selectBottom">
                     <c:forEach var="bottom" items="${bottoms}">
-                        <option value="${bottom.name}">${bottom.name}</option>
+                        <option value="${bottom.id}">${bottom.name}</option>
                     </c:forEach>
                 </select>
             </div>
@@ -78,9 +66,9 @@
             <!-- Dropdown toppings -->
             <div class="form-group">
                 <label for="selectTopping">Select Cupcake topping</label>
-                <select class="form-control" name="topping" id="selectTopping">
+                <select class="form-control" name="Toppings" id="selectTopping">
                     <c:forEach var="topping" items="${toppings}">
-                        <option value="${topping.name}">${topping.name}</option>
+                        <option value="${topping.id}">${topping.name}</option>
                     </c:forEach>
                 </select>
             </div>
@@ -88,7 +76,7 @@
 
     </div>
 
-    <div class="text-right">
+    <div class="text-center">
         <button type="submit" class="btn btn-primary">Go to cart</button>
     </div>
 
