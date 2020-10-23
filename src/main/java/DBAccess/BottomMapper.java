@@ -16,7 +16,7 @@ public class BottomMapper {
         List<Bottom> bottomList = null;
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM bottoms";
+            String SQL = "SELECT * FROM bottom";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
             System.out.println("Før while");

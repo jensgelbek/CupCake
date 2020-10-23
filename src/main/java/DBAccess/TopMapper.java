@@ -17,7 +17,7 @@ public class TopMapper {
         List<Top> topList = null;
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM tops";
+            String SQL = "SELECT * FROM topping";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -25,10 +25,10 @@ public class TopMapper {
                 if (topList == null){
                     topList = new ArrayList<>();
                 }
-                int top_id = rs.getInt("top_id");
+                int topping_id = rs.getInt("topping_id");
                 String name = rs.getString("name");
                 int price = rs.getInt("price");
-                Top top = new Top(top_id, name,price);
+                Top top = new Top(topping_id, name,price);
                 topList.add(top);
             }
         } catch (ClassNotFoundException | SQLException ex) {
